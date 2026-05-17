@@ -379,10 +379,10 @@ body{font-family:'Sora',system-ui,sans-serif;background:var(--bg);color:var(--t1
 // ================================================================
 const CFG = {
   nome:     'Ciclo 1',
-  inicio:   '2026-05-19',   // data de início: YYYY-MM-DD
+  inicio:   '2026-05-18',   // data de início: YYYY-MM-DD
   duracao:  30,              // dias do ciclo
   maxPts:   12,
-  sheetURL: 'COLE_SUA_URL_AQUI',  // URL do Google Apps Script (passo 4 do tutorial)
+  sheetURL: 'https://script.google.com/macros/s/AKfycbws22dnvud6l7obHYLytp2jNkaey4aRVqmh8IAMaHim3k45prMKQFqavfcQtEK2cYCMVw/exec',  // URL do Google Apps Script (passo 4 do tutorial)
 };
 // ================================================================
 
@@ -435,7 +435,7 @@ async function saveHoje(){
   localStorage.setItem('ciclo-hist', JSON.stringify(hist));
   updateScore();
   // Sheets
-  if(CFG.sheetURL && CFG.sheetURL !== 'COLE_SUA_URL_AQUI'){
+  if(CFG.sheetURL && CFG.sheetURL !== 'https://script.google.com/macros/s/AKfycbws22dnvud6l7obHYLytp2jNkaey4aRVqmh8IAMaHim3k45prMKQFqavfcQtEK2cYCMVw/exec'){
     try{
       const p = new URLSearchParams({
         action:'saveDay',
@@ -488,7 +488,7 @@ function goTab(t){
 
 // ---- Histórico ----
 async function loadHist(){
-  if(CFG.sheetURL && CFG.sheetURL !== 'COLE_SUA_URL_AQUI'){
+  if(CFG.sheetURL && CFG.sheetURL !== 'https://script.google.com/macros/s/AKfycbws22dnvud6l7obHYLytp2jNkaey4aRVqmh8IAMaHim3k45prMKQFqavfcQtEK2cYCMVw/exec'){
     try{
       const r = await fetch(CFG.sheetURL+'?action=getHistory');
       if(r.ok){
