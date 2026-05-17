@@ -444,7 +444,7 @@ async function saveHoje(){
         total: row.total,
         ...TASKS.reduce((a,k)=>{a[k]=row[k]?'1':'0';return a;},{})
       });
-      await fetch(CFG.sheetURL+'?'+p.toString(), {redirect:'follow'});
+      new Image().src = CFG.sheetURL+'?'+p.toString();
       setSync('ok');
     }catch(e){setSync('err');}
   }
@@ -490,7 +490,7 @@ function goTab(t){
 async function loadHist(){
   if(CFG.sheetURL && CFG.sheetURL !== 'https://script.google.com/macros/s/AKfycbws22dnvud6l7obHYLytp2jNkaey4aRVqmh8IAMaHim3k45prMKQFqavfcQtEK2cYCMVw/exec'){
     try{
-      const r = await fetch(CFG.sheetURL+'?action=getHistory');
+      const r = await fetch(CFG.sheetURL+'?action=getHistory', {mode:'cors'});
       if(r.ok){
         const data = await r.json();
         hist = data;
