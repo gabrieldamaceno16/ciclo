@@ -444,7 +444,7 @@ async function saveHoje(){
         total: row.total,
         ...TASKS.reduce((a,k)=>{a[k]=row[k]?'1':'0';return a;},{})
       });
-      await fetch(CFG.sheetURL+'?'+p.toString(), {mode:'no-cors'});
+      await fetch(CFG.sheetURL+'?'+p.toString(), {redirect:'follow'});
       setSync('ok');
     }catch(e){setSync('err');}
   }
