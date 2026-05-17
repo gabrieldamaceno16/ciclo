@@ -9,60 +9,34 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 :root{
-  --bg:#F7F6F3;
-  --card:#FFFFFF;
-  --b:rgba(0,0,0,0.08);
-  --bs:rgba(0,0,0,0.14);
-  --t1:#1C1C1A;
-  --t2:#6B6B68;
-  --t3:#A3A39F;
-  --green:#2A5409;
-  --green-bg:#EDF5E1;
-  --green-bd:#9DC774;
-  --green-mid:#4D8B1F;
-  --amber:#854F0B;
-  --amber-bg:#FEF3E2;
-  --r:12px;
-  --rs:8px;
+  --bg:#F7F6F3;--card:#FFFFFF;--b:rgba(0,0,0,0.08);--bs:rgba(0,0,0,0.14);
+  --t1:#1C1C1A;--t2:#6B6B68;--t3:#A3A39F;
+  --green:#2A5409;--green-bg:#EDF5E1;--green-bd:#9DC774;--green-mid:#4D8B1F;
+  --amber:#854F0B;--amber-bg:#FEF3E2;--r:12px;--rs:8px;
 }
 html,body{height:100%;}
 body{font-family:'Sora',system-ui,sans-serif;background:var(--bg);color:var(--t1);min-height:100%;overflow-x:hidden;}
-
-/* ---- Layout ---- */
 .app{max-width:640px;margin:0 auto;padding-bottom:80px;}
-
-/* ---- Top bar ---- */
 .topbar{background:var(--green);color:#fff;text-align:center;padding:9px 16px;font-size:12px;font-weight:600;letter-spacing:.04em;}
-
-/* ---- Header ---- */
 .header{padding:20px 20px 16px;}
 .header-row{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:14px;}
-.h-left{}
 .ciclo-tag{font-size:10px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;}
-.date-str{font-size:17px;font-weight:600;color:var(--t1);}
+.date-str{font-size:17px;font-weight:600;}
 .h-right{text-align:right;}
 .pts-label{font-size:10px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;}
-.pts-num{font-size:32px;font-weight:700;line-height:1;color:var(--t1);}
+.pts-num{font-size:32px;font-weight:700;line-height:1;}
 .pts-max{font-size:14px;font-weight:400;color:var(--t3);}
 .prog-wrap{height:5px;background:rgba(0,0,0,0.07);border-radius:3px;overflow:hidden;margin-bottom:5px;}
 .prog-bar{height:100%;background:var(--green-mid);border-radius:3px;width:0%;transition:width .45s cubic-bezier(.4,0,.2,1);}
 .prog-label{font-size:11px;color:var(--t3);}
-
-/* ---- Nav ---- */
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;max-width:640px;margin:0 auto;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--b);display:flex;z-index:100;}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;max-width:640px;margin:0 auto;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-top:1px solid var(--b);display:flex;z-index:100;}
 .nav-btn{flex:1;padding:10px 4px 12px;border:none;background:transparent;color:var(--t3);cursor:pointer;font-family:'Sora',sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;display:flex;flex-direction:column;align-items:center;gap:5px;transition:color .15s;}
 .nav-btn.on{color:var(--green);}
 .nav-ico{font-size:22px;}
-
-/* ---- Main ---- */
 .main{padding:0 16px;}
 .tab{display:none;}
 .tab.on{display:block;}
-
-/* ---- Section label ---- */
 .sec{font-size:10px;font-weight:700;color:var(--t3);letter-spacing:.12em;text-transform:uppercase;margin:20px 0 8px;display:flex;align-items:center;gap:6px;}
-
-/* ---- Task card ---- */
 .task{background:var(--card);border:1px solid var(--b);border-radius:var(--r);padding:13px 15px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:border-color .15s,background .15s;}
 .task:active{transform:scale(.985);}
 .task.done{border-color:var(--green-bd);background:var(--green-bg);}
@@ -73,8 +47,6 @@ body{font-family:'Sora',system-ui,sans-serif;background:var(--bg);color:var(--t1
 .task-sub{font-size:12px;color:var(--t2);margin-top:1px;}
 .badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:rgba(0,0,0,0.05);color:var(--t2);white-space:nowrap;flex-shrink:0;}
 .task.done .badge{background:rgba(42,84,9,0.12);color:var(--green);}
-
-/* ---- Post card ---- */
 .pcard{background:var(--card);border:1px solid var(--b);border-radius:var(--r);padding:13px 15px;margin-bottom:8px;transition:border-color .15s;}
 .pcard.done{border-color:var(--green-bd);}
 .pcard-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px;}
@@ -85,20 +57,16 @@ body{font-family:'Sora',system-ui,sans-serif;background:var(--bg);color:var(--t1
 .pbtn{padding:7px 13px;border:1px solid var(--bs);border-radius:var(--rs);background:transparent;color:var(--t1);cursor:pointer;font-size:12px;font-weight:600;font-family:'Sora',sans-serif;transition:all .15s;}
 .pbtn:active{transform:scale(.97);}
 .pbtn.sel{background:var(--green);border-color:var(--green);color:#fff;}
-
-/* ---- Histórico ---- */
 .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;}
 .metric{background:var(--card);border:1px solid var(--b);border-radius:var(--r);padding:12px 12px 10px;}
 .m-lbl{font-size:10px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px;}
-.m-val{font-size:24px;font-weight:700;line-height:1;color:var(--t1);}
+.m-val{font-size:24px;font-weight:700;line-height:1;}
 .m-sub{font-size:11px;color:var(--t3);margin-top:2px;}
 .chart-card{background:var(--card);border:1px solid var(--b);border-radius:var(--r);padding:14px;margin-bottom:14px;}
 .chart-lbl{font-size:12px;font-weight:600;color:var(--t2);margin-bottom:10px;}
 .chart-wrap{position:relative;width:100%;height:170px;}
 .legend{display:flex;gap:14px;margin-top:10px;font-size:11px;color:var(--t3);flex-wrap:wrap;}
 .leg-dot{width:8px;height:8px;border-radius:2px;display:inline-block;margin-right:4px;vertical-align:middle;}
-
-/* Tabela histórico */
 .htable{background:var(--card);border:1px solid var(--b);border-radius:var(--r);overflow:hidden;margin-bottom:16px;}
 .htable-head{display:grid;grid-template-columns:1fr 58px repeat(7,24px);gap:2px;padding:9px 12px;background:var(--bg);font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--b);}
 .hrow{display:grid;grid-template-columns:1fr 58px repeat(7,24px);gap:2px;padding:9px 12px;border-bottom:1px solid var(--b);align-items:center;font-size:12px;}
@@ -112,13 +80,11 @@ body{font-family:'Sora',system-ui,sans-serif;background:var(--bg);color:var(--t1
 .hdot{width:10px;height:10px;border-radius:50%;background:rgba(0,0,0,0.1);margin:0 auto;}
 .hdot.on{background:var(--green-mid);}
 .hico{font-size:11px;text-align:center;}
-
-/* ---- Prêmios ---- */
 .premio{background:var(--card);border:1px solid var(--b);border-radius:var(--r);padding:15px;margin-bottom:10px;display:flex;align-items:flex-start;gap:13px;}
 .premio.unlk{border-color:var(--green-bd);background:var(--green-bg);}
 .p-ico{font-size:30px;flex-shrink:0;line-height:1;}
 .p-body{flex:1;min-width:0;}
-.p-nome{font-size:14px;font-weight:700;margin-bottom:3px;color:var(--t1);}
+.p-nome{font-size:14px;font-weight:700;margin-bottom:3px;}
 .p-desc{font-size:12px;color:var(--t2);margin-bottom:7px;line-height:1.5;}
 .p-req{font-size:12px;color:var(--t3);}
 .premio.unlk .p-req{color:var(--green);font-weight:700;}
@@ -127,15 +93,13 @@ body{font-family:'Sora',system-ui,sans-serif;background:var(--bg);color:var(--t1
 .p-right{display:flex;flex-direction:column;align-items:center;gap:8px;}
 .p-lock{font-size:18px;opacity:.25;}
 .premio.unlk .p-lock{opacity:1;}
-.p-del{background:none;border:none;cursor:pointer;font-size:13px;color:var(--t3);padding:2px;line-height:1;}
+.p-del{background:none;border:none;cursor:pointer;font-size:13px;color:var(--t3);padding:2px;}
 .add-btn{width:100%;padding:14px;border:1.5px dashed var(--bs);border-radius:var(--r);background:transparent;color:var(--t2);cursor:pointer;font-size:13px;font-weight:600;font-family:'Sora',sans-serif;margin-bottom:8px;transition:all .15s;}
 .add-btn:hover{border-color:var(--green);color:var(--green);}
-
-/* ---- Modal ---- */
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;display:flex;align-items:flex-end;justify-content:center;}
 .overlay.hid{display:none;}
 .modal{background:#fff;border-radius:20px 20px 0 0;padding:24px 20px 44px;width:100%;max-width:640px;}
-.m-title{font-size:17px;font-weight:700;margin-bottom:20px;color:var(--t1);}
+.m-title{font-size:17px;font-weight:700;margin-bottom:20px;}
 .field{margin-bottom:14px;}
 .field label{font-size:11px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:6px;}
 .field input,.field select,.field textarea{width:100%;padding:11px 14px;border:1px solid var(--bs);border-radius:var(--rs);font-family:'Sora',sans-serif;font-size:15px;color:var(--t1);background:#fff;outline:none;}
@@ -144,26 +108,20 @@ body{font-family:'Sora',system-ui,sans-serif;background:var(--bg);color:var(--t1
 .m-btns{display:flex;gap:10px;margin-top:20px;}
 .btn-c{flex:1;padding:13px;border:1px solid var(--bs);border-radius:var(--rs);background:transparent;font-family:'Sora',sans-serif;font-size:14px;font-weight:600;cursor:pointer;color:var(--t2);}
 .btn-s{flex:2;padding:13px;border:none;border-radius:var(--rs);background:var(--green);font-family:'Sora',sans-serif;font-size:14px;font-weight:700;cursor:pointer;color:#fff;}
-
-/* ---- Utils ---- */
 .empty{text-align:center;padding:40px 20px;color:var(--t3);font-size:13px;line-height:1.8;}
-.loading{text-align:center;padding:30px;color:var(--t3);font-size:13px;}
-.sync-status{font-size:11px;color:var(--t3);text-align:center;padding:8px 0 4px;}
+.sync-status{font-size:11px;color:var(--t3);text-align:center;padding:8px 0 4px;min-height:24px;}
 .sync-ok{color:var(--green-mid);}
 .sync-err{color:#A32D2D;}
 </style>
 </head>
 <body>
-
 <div class="app">
 
-  <!-- Top bar -->
   <div class="topbar" id="topbar">📅 Ciclo 1 — dia 1 de 30</div>
 
-  <!-- Header -->
   <div class="header">
     <div class="header-row">
-      <div class="h-left">
+      <div>
         <div class="ciclo-tag" id="ciclo-tag">Ciclo 1</div>
         <div class="date-str" id="date-str">carregando...</div>
       </div>
@@ -176,14 +134,11 @@ body{font-family:'Sora',system-ui,sans-serif;background:var(--bg);color:var(--t1
     <div class="prog-label" id="prog-lbl">0% do máximo de hoje</div>
   </div>
 
-  <!-- Main content -->
   <div class="main">
 
     <!-- TAB: HOJE -->
     <div class="tab on" id="tab-hoje">
-
       <div class="sec">📱 Conteúdo</div>
-
       <div class="pcard" id="pcard">
         <div class="pcard-top">
           <div class="pcard-title">Post do dia</div>
@@ -195,124 +150,59 @@ body{font-family:'Sora',system-ui,sans-serif;background:var(--bg);color:var(--t1
           <button class="pbtn" data-pts="0.5" onclick="selPost(this)">🖼 Estático · 0,5 pt</button>
         </div>
       </div>
-
       <div class="task" id="t-stories" onclick="tog('stories',1,this)">
-        <div class="task-l">
-          <div class="chk">✓</div>
-          <div>
-            <div class="task-title">3 stories</div>
-            <div class="task-sub">sendo 2 com conteúdo útil</div>
-          </div>
-        </div>
+        <div class="task-l"><div class="chk">✓</div><div><div class="task-title">3 stories</div><div class="task-sub">sendo 2 com conteúdo útil</div></div></div>
         <div class="badge">1 pt</div>
       </div>
-
       <div class="sec">🎯 Vendas</div>
-
       <div class="task" id="t-prosp" onclick="tog('prosp',2,this)">
-        <div class="task-l">
-          <div class="chk">✓</div>
-          <div>
-            <div class="task-title">5 prospecções</div>
-            <div class="task-sub">contatos novos abordados</div>
-          </div>
-        </div>
+        <div class="task-l"><div class="chk">✓</div><div><div class="task-title">5 prospecções</div><div class="task-sub">contatos novos abordados</div></div></div>
         <div class="badge">2 pts</div>
       </div>
-
       <div class="sec">☀️ Rotina</div>
-
       <div class="task" id="t-terco" onclick="tog('terco',1,this)">
-        <div class="task-l">
-          <div class="chk">✓</div>
-          <div class="task-title">Terço</div>
-        </div>
+        <div class="task-l"><div class="chk">✓</div><div class="task-title">Terço</div></div>
         <div class="badge">1 pt</div>
       </div>
-
       <div class="task" id="t-foco" onclick="tog('foco',2,this)">
-        <div class="task-l">
-          <div class="chk">✓</div>
-          <div>
-            <div class="task-title">3h de trabalho focado</div>
-            <div class="task-sub">sem interrupção</div>
-          </div>
-        </div>
+        <div class="task-l"><div class="chk">✓</div><div><div class="task-title">3h de trabalho focado</div><div class="task-sub">sem interrupção</div></div></div>
         <div class="badge">2 pts</div>
       </div>
-
       <div class="task" id="t-sono" onclick="tog('sono',1,this)">
-        <div class="task-l">
-          <div class="chk">✓</div>
-          <div class="task-title">6,5h de sono</div>
-        </div>
+        <div class="task-l"><div class="chk">✓</div><div class="task-title">6,5h de sono</div></div>
         <div class="badge">1 pt</div>
       </div>
-
       <div class="task" id="t-leitura" onclick="tog('leitura',1,this)">
-        <div class="task-l">
-          <div class="chk">✓</div>
-          <div class="task-title">30 min de leitura</div>
-        </div>
+        <div class="task-l"><div class="chk">✓</div><div class="task-title">30 min de leitura</div></div>
         <div class="badge">1 pt</div>
       </div>
-
       <div class="sec">📵 Controle</div>
-
       <div class="task" id="t-celular" onclick="tog('celular',1,this)">
-        <div class="task-l">
-          <div class="chk">✓</div>
-          <div>
-            <div class="task-title">Sem celular à toa</div>
-            <div class="task-sub">nada de reels ou youtube aleatório</div>
-          </div>
-        </div>
+        <div class="task-l"><div class="chk">✓</div><div><div class="task-title">Sem celular à toa</div><div class="task-sub">nada de reels ou youtube aleatório</div></div></div>
         <div class="badge">1 pt</div>
       </div>
-
       <div class="sync-status" id="sync-status"></div>
       <div style="height:12px;"></div>
-
     </div>
 
     <!-- TAB: HISTÓRICO -->
     <div class="tab" id="tab-hist">
-
       <div class="metrics">
-        <div class="metric">
-          <div class="m-lbl">Dias</div>
-          <div class="m-val" id="m-dias">0</div>
-          <div class="m-sub">registrados</div>
-        </div>
-        <div class="metric">
-          <div class="m-lbl">Média</div>
-          <div class="m-val" id="m-media">0</div>
-          <div class="m-sub">pts/dia</div>
-        </div>
-        <div class="metric">
-          <div class="m-lbl">Total</div>
-          <div class="m-val" id="m-total">0</div>
-          <div class="m-sub">acumulado</div>
-        </div>
+        <div class="metric"><div class="m-lbl">Dias</div><div class="m-val" id="m-dias">0</div><div class="m-sub">registrados</div></div>
+        <div class="metric"><div class="m-lbl">Média</div><div class="m-val" id="m-media">0</div><div class="m-sub">pts/dia</div></div>
+        <div class="metric"><div class="m-lbl">Total</div><div class="m-val" id="m-total">0</div><div class="m-sub">acumulado</div></div>
       </div>
-
       <div class="chart-card">
         <div class="chart-lbl">Pontos por dia — últimos 30 dias</div>
-        <div class="chart-wrap">
-          <canvas id="hchart" role="img" aria-label="Gráfico de barras com pontuação diária dos últimos 30 dias">Histórico de pontuação.</canvas>
-        </div>
+        <div class="chart-wrap"><canvas id="hchart" role="img" aria-label="Gráfico de barras com pontuação diária">Histórico de pontuação.</canvas></div>
         <div class="legend">
-          <span><span class="leg-dot" style="background:#2A5409;"></span>10+ pts — ótimo</span>
-          <span><span class="leg-dot" style="background:#639922;"></span>6–9 pts — bom</span>
-          <span><span class="leg-dot" style="background:#BA7517;"></span>3–5 pts — regular</span>
-          <span><span class="leg-dot" style="background:#D3D1C7;"></span>0–2 pts — fraco</span>
+          <span><span class="leg-dot" style="background:#2A5409;"></span>10+ pts</span>
+          <span><span class="leg-dot" style="background:#639922;"></span>6–9 pts</span>
+          <span><span class="leg-dot" style="background:#BA7517;"></span>3–5 pts</span>
+          <span><span class="leg-dot" style="background:#D3D1C7;"></span>0–2 pts</span>
         </div>
       </div>
-
-      <div class="htable" id="htable">
-        <div class="loading">Carregando histórico...</div>
-      </div>
-
+      <div class="htable" id="htable"><div class="empty">Carregando histórico...</div></div>
       <div style="height:12px;"></div>
     </div>
 
@@ -323,37 +213,21 @@ body{font-family:'Sora',system-ui,sans-serif;background:var(--bg);color:var(--t1
       <div style="height:12px;"></div>
     </div>
 
-  </div><!-- /main -->
+  </div>
+</div>
 
-</div><!-- /app -->
-
-<!-- Bottom nav -->
 <nav class="bottom-nav">
-  <button class="nav-btn on" id="nav-hoje" onclick="goTab('hoje')">
-    <span class="nav-ico">☀️</span>Hoje
-  </button>
-  <button class="nav-btn" id="nav-hist" onclick="goTab('hist')">
-    <span class="nav-ico">📊</span>Histórico
-  </button>
-  <button class="nav-btn" id="nav-premios" onclick="goTab('premios')">
-    <span class="nav-ico">🏆</span>Prêmios
-  </button>
+  <button class="nav-btn on" id="nav-hoje" onclick="goTab('hoje')"><span class="nav-ico">☀️</span>Hoje</button>
+  <button class="nav-btn" id="nav-hist" onclick="goTab('hist')"><span class="nav-ico">📊</span>Histórico</button>
+  <button class="nav-btn" id="nav-premios" onclick="goTab('premios')"><span class="nav-ico">🏆</span>Prêmios</button>
 </nav>
 
-<!-- Modal prêmio -->
 <div class="overlay hid" id="overlay" onclick="overlayClick(event)">
   <div class="modal">
     <div class="m-title">Novo prêmio</div>
-    <div class="field">
-      <label>Emoji + Nome do prêmio</label>
-      <input type="text" id="f-nome" placeholder="🎮 Jogo novo" maxlength="60"/>
-    </div>
-    <div class="field">
-      <label>Descrição (opcional)</label>
-      <textarea id="f-desc" placeholder="Detalhes do prêmio..."></textarea>
-    </div>
-    <div class="field">
-      <label>Tipo de meta</label>
+    <div class="field"><label>Emoji + Nome do prêmio</label><input type="text" id="f-nome" placeholder="🎮 Jogo novo" maxlength="60"/></div>
+    <div class="field"><label>Descrição (opcional)</label><textarea id="f-desc" placeholder="Detalhes do prêmio..."></textarea></div>
+    <div class="field"><label>Tipo de meta</label>
       <select id="f-tipo" onchange="updLabel()">
         <option value="pontos_totais">Pontos totais acumulados</option>
         <option value="streak">Dias consecutivos com pontuação</option>
@@ -361,10 +235,7 @@ body{font-family:'Sora',system-ui,sans-serif;background:var(--bg);color:var(--t1
         <option value="dias_count">Total de dias registrados</option>
       </select>
     </div>
-    <div class="field">
-      <label id="f-req-lbl">Quantidade de pontos necessária</label>
-      <input type="number" id="f-req" placeholder="ex: 80" min="1"/>
-    </div>
+    <div class="field"><label id="f-req-lbl">Quantidade de pontos necessária</label><input type="number" id="f-req" placeholder="ex: 80" min="1"/></div>
     <div class="m-btns">
       <button class="btn-c" onclick="closeModal()">Cancelar</button>
       <button class="btn-s" onclick="savePremio()">Salvar prêmio</button>
@@ -375,105 +246,113 @@ body{font-family:'Sora',system-ui,sans-serif;background:var(--bg);color:var(--t1
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
 // ================================================================
-//  ⚙️  CONFIGURAÇÃO — edite apenas esta seção
+//  ⚙️  CONFIGURAÇÃO
 // ================================================================
 const CFG = {
   nome:     'Ciclo 1',
-  inicio:   '2026-05-18',   // data de início: YYYY-MM-DD
-  duracao:  30,              // dias do ciclo
+  inicio:   '2026-05-18',
+  duracao:  30,
   maxPts:   12,
-  sheetURL: 'https://script.google.com/macros/s/AKfycbws22dnvud6l7obHYLytp2jNkaey4aRVqmh8IAMaHim3k45prMKQFqavfcQtEK2cYCMVw/exec',  // URL do Google Apps Script (passo 4 do tutorial)
+  sheetURL: 'https://script.google.com/macros/s/AKfycbws22dnvud6l7obHYLytp2jNkaey4aRVqmh8IAMaHim3k45prMKQFqavfcQtEK2cYCMVw/exec',
 };
 // ================================================================
 
 const TASKS = ['stories','prosp','terco','foco','sono','leitura','celular'];
 const PTS   = {stories:1,prosp:2,terco:1,foco:2,sono:1,leitura:1,celular:1};
 const ICONS = {stories:'📱',prosp:'🎯',terco:'🙏',foco:'⚡',sono:'😴',leitura:'📚',celular:'📵'};
-const TIPO_LABEL = {
-  pontos_totais:'pts totais acumulados',
-  streak:'dias seguidos',
-  dias_min:'dias com 8+ pts',
-  dias_count:'dias registrados'
-};
+const TIPO_LABEL = {pontos_totais:'pts totais',streak:'dias seguidos',dias_min:'dias com 8+ pts',dias_count:'dias registrados'};
 
-let hoje = {post:0,stories:false,prosp:false,terco:false,foco:false,sono:false,leitura:false,celular:false};
-let hist  = [];
+let hoje    = {post:0,stories:false,prosp:false,terco:false,foco:false,sono:false,leitura:false,celular:false};
+let hist    = [];
 let premios = [];
-let hChart = null;
+let hChart  = null;
 
-// ---- Data ----
 const now      = new Date();
 const todayKey = now.toISOString().split('T')[0];
-const inicio   = new Date(CFG.inicio + 'T00:00:00');
-const diaN     = Math.max(1, Math.min(Math.floor((now - inicio) / 86400000) + 1, CFG.duracao));
+const inicio   = new Date(CFG.inicio+'T00:00:00');
+const diaN     = Math.max(1,Math.min(Math.floor((now-inicio)/86400000)+1,CFG.duracao));
 
-document.getElementById('topbar').textContent     = `📅 ${CFG.nome} — dia ${diaN} de ${CFG.duracao}`;
-document.getElementById('ciclo-tag').textContent  = CFG.nome;
-document.getElementById('date-str').textContent   = now.toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'});
+document.getElementById('topbar').textContent    = `📅 ${CFG.nome} — dia ${diaN} de ${CFG.duracao}`;
+document.getElementById('ciclo-tag').textContent = CFG.nome;
+document.getElementById('date-str').textContent  = now.toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'});
+
+// ---- JSONP helper — contorna CORS com Google Apps Script ----
+function jsonp(url) {
+  return new Promise((resolve, reject) => {
+    const cbName = 'ciclo_cb_' + Date.now() + '_' + Math.floor(Math.random()*9999);
+    const script = document.createElement('script');
+    const timeout = setTimeout(() => {
+      cleanup();
+      reject(new Error('timeout'));
+    }, 10000);
+    function cleanup() {
+      clearTimeout(timeout);
+      delete window[cbName];
+      if (script.parentNode) script.parentNode.removeChild(script);
+    }
+    window[cbName] = (data) => { cleanup(); resolve(data); };
+    script.onerror = () => { cleanup(); reject(new Error('script error')); };
+    script.src = url + (url.includes('?') ? '&' : '?') + 'callback=' + cbName;
+    document.head.appendChild(script);
+  });
+}
 
 // ---- Score ----
-function calc(s){
-  return (s.post||0) + TASKS.reduce((a,k)=>a+(s[k]?PTS[k]:0),0);
-}
+function calc(s){ return (s.post||0)+TASKS.reduce((a,k)=>a+(s[k]?PTS[k]:0),0); }
 function updateScore(){
-  const sc  = calc(hoje);
-  const pct = Math.min(100,(sc/CFG.maxPts)*100);
+  const sc=calc(hoje), pct=Math.min(100,(sc/CFG.maxPts)*100);
   document.getElementById('score').textContent    = Number.isInteger(sc)?sc:sc.toFixed(1).replace('.',',');
   document.getElementById('prog').style.width     = pct+'%';
   document.getElementById('prog-lbl').textContent = Math.round(pct)+'% do máximo de hoje';
 }
 
-// ---- Salvar hoje ----
+// ---- Salvar ----
 async function saveHoje(){
-  const row = {...hoje, date:todayKey, total: parseFloat(calc(hoje).toFixed(1))};
-  // Local
+  const total = parseFloat(calc(hoje).toFixed(1));
+  const row   = {...hoje, date:todayKey, total};
   localStorage.setItem('ciclo-hoje-'+todayKey, JSON.stringify(hoje));
-  // Atualiza hist local
   const idx = hist.findIndex(h=>h.date===todayKey);
   if(idx>=0) hist[idx]=row; else hist.push(row);
   hist.sort((a,b)=>a.date.localeCompare(b.date));
   localStorage.setItem('ciclo-hist', JSON.stringify(hist));
   updateScore();
-  // Sheets
-  if(CFG.sheetURL && CFG.sheetURL !== 'https://script.google.com/macros/s/AKfycbws22dnvud6l7obHYLytp2jNkaey4aRVqmh8IAMaHim3k45prMKQFqavfcQtEK2cYCMVw/exec'){
-    try{
-      const p = new URLSearchParams({
-        action:'saveDay',
-        date:  row.date,
-        post:  row.post,
-        total: row.total,
-        ...TASKS.reduce((a,k)=>{a[k]=row[k]?'1':'0';return a;},{})
-      });
-      new Image().src = CFG.sheetURL+'?'+p.toString();
-      setSync('ok');
-    }catch(e){setSync('err');}
+
+  // Envia para o Sheets via JSONP
+  const p = new URLSearchParams({
+    action:'saveDay', date:todayKey, post:hoje.post, total,
+    ...TASKS.reduce((a,k)=>{a[k]=hoje[k]?'1':'0';return a;},{})
+  });
+  try {
+    await jsonp(CFG.sheetURL+'?'+p.toString());
+    setSync('ok');
+  } catch(e) {
+    setSync('err');
   }
 }
 
 function setSync(s){
-  const el = document.getElementById('sync-status');
+  const el=document.getElementById('sync-status');
   if(!el) return;
-  if(s==='ok') {el.textContent='✅ Salvo no Google Sheets';el.className='sync-status sync-ok';}
-  else          {el.textContent='⚠️ Salvo localmente (Sheets offline)';el.className='sync-status sync-err';}
+  el.textContent = s==='ok' ? '✅ Salvo no Google Sheets' : '⚠️ Salvo localmente (Sheets offline)';
+  el.className   = 'sync-status '+(s==='ok'?'sync-ok':'sync-err');
   setTimeout(()=>{el.textContent='';el.className='sync-status';},4000);
 }
 
 // ---- Post ----
 function selPost(btn){
-  const pts = parseFloat(btn.dataset.pts);
+  const pts=parseFloat(btn.dataset.pts);
   document.querySelectorAll('.pbtn').forEach(b=>b.classList.remove('sel'));
-  const badge=document.getElementById('pbadge'), card=document.getElementById('pcard');
+  const badge=document.getElementById('pbadge'),card=document.getElementById('pcard');
   if(hoje.post===pts){
-    hoje.post=0; badge.textContent='não postou ainda'; badge.className='pbadge'; card.classList.remove('done');
-  }else{
-    btn.classList.add('sel'); hoje.post=pts;
-    const lbl = pts===0.5?'0,5 pt':pts+(pts===1?' pt':' pts');
-    badge.textContent=lbl; badge.className='pbadge on'; card.classList.add('done');
+    hoje.post=0;badge.textContent='não postou ainda';badge.className='pbadge';card.classList.remove('done');
+  } else {
+    btn.classList.add('sel');hoje.post=pts;
+    badge.textContent=pts===0.5?'0,5 pt':pts+(pts===1?' pt':' pts');
+    badge.className='pbadge on';card.classList.add('done');
   }
   saveHoje();
 }
 
-// ---- Toggle task ----
 function tog(id,pts,el){hoje[id]=!hoje[id];el.classList.toggle('done',hoje[id]);saveHoje();}
 
 // ---- Tabs ----
@@ -488,49 +367,36 @@ function goTab(t){
 
 // ---- Histórico ----
 async function loadHist(){
-  if(CFG.sheetURL && CFG.sheetURL !== 'https://script.google.com/macros/s/AKfycbws22dnvud6l7obHYLytp2jNkaey4aRVqmh8IAMaHim3k45prMKQFqavfcQtEK2cYCMVw/exec'){
-    try{
-      const r = await fetch(CFG.sheetURL+'?action=getHistory', {mode:'cors'});
-      if(r.ok){
-        const data = await r.json();
-        hist = data;
-        localStorage.setItem('ciclo-hist', JSON.stringify(hist));
-        return;
-      }
-    }catch(e){}
-  }
-  const saved = localStorage.getItem('ciclo-hist');
-  if(saved) hist = JSON.parse(saved);
+  try {
+    const data = await jsonp(CFG.sheetURL+'?action=getHistory');
+    if(Array.isArray(data)){ hist=data; localStorage.setItem('ciclo-hist',JSON.stringify(hist)); return; }
+  } catch(e){}
+  const saved=localStorage.getItem('ciclo-hist');
+  if(saved) hist=JSON.parse(saved);
 }
 
 function renderHist(){
   if(!hist.length){
     document.getElementById('htable').innerHTML='<div class="empty">Nenhum dia registrado ainda.<br>Marque as tarefas de hoje para começar!</div>';
-    // Limpa métricas
     ['m-dias','m-media','m-total'].forEach(id=>document.getElementById(id).textContent='0');
     return;
   }
-
-  // Métricas
-  const total = hist.reduce((a,h)=>a+(parseFloat(h.total)||0),0);
-  const media = total/hist.length;
+  const total=hist.reduce((a,h)=>a+(parseFloat(h.total)||0),0);
+  const media=total/hist.length;
   document.getElementById('m-dias').textContent  = hist.length;
   document.getElementById('m-media').textContent = media.toFixed(1).replace('.',',');
   document.getElementById('m-total').textContent = total.toFixed(1).replace('.',',');
 
-  // Gráfico
-  const last30  = hist.slice(-30);
-  const labels  = last30.map(h=>new Date(h.date+'T00:00:00').toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'}));
-  const vals    = last30.map(h=>parseFloat((parseFloat(h.total)||0).toFixed(1)));
-  const colors  = vals.map(v=>v>=10?'#2A5409':v>=6?'#639922':v>=3?'#BA7517':'#D3D1C7');
+  const last30=hist.slice(-30);
+  const labels=last30.map(h=>new Date(h.date+'T00:00:00').toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'}));
+  const vals  =last30.map(h=>parseFloat((parseFloat(h.total)||0).toFixed(1)));
+  const colors=vals.map(v=>v>=10?'#2A5409':v>=6?'#639922':v>=3?'#BA7517':'#D3D1C7');
 
-  const canvas = document.getElementById('hchart');
   if(hChart){hChart.destroy();hChart=null;}
-  hChart = new Chart(canvas,{
+  hChart=new Chart(document.getElementById('hchart'),{
     type:'bar',
     data:{labels,datasets:[{data:vals,backgroundColor:colors,borderRadius:5,borderSkipped:false}]},
-    options:{
-      responsive:true,maintainAspectRatio:false,
+    options:{responsive:true,maintainAspectRatio:false,
       plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>ctx.raw+' pts'}}},
       scales:{
         x:{grid:{display:false},border:{display:false},ticks:{font:{size:9},color:'#A3A39F',maxRotation:45,autoSkip:true,maxTicksLimit:15}},
@@ -539,132 +405,102 @@ function renderHist(){
     }
   });
 
-  // Tabela
-  const headIcons = TASKS.map(k=>`<div class="hico" title="${k}">${ICONS[k]}</div>`).join('');
-  const rows = hist.slice().reverse().map(h=>{
-    const pts = parseFloat(h.total)||0;
-    const cl  = pts>=10?'ph':pts>=6?'pm':'pl';
-    const dateStr = new Date(h.date+'T00:00:00').toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'2-digit'});
-    const dots = TASKS.map(k=>`<div class="hdot ${h[k]||h[k]==='1'||h[k]===1?'on':''}"></div>`).join('');
-    const ptsStr = Number.isInteger(pts)?pts:pts.toFixed(1).replace('.',',');
-    return `<div class="hrow">
-      <div class="hdate">${dateStr}</div>
-      <div><span class="hpill ${cl}">${ptsStr}</span></div>
-      ${dots}
-    </div>`;
+  const headIcons=TASKS.map(k=>`<div class="hico" title="${k}">${ICONS[k]}</div>`).join('');
+  const rows=hist.slice().reverse().map(h=>{
+    const pts=parseFloat(h.total)||0;
+    const cl =pts>=10?'ph':pts>=6?'pm':'pl';
+    const d  =new Date(h.date+'T00:00:00').toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'2-digit'});
+    const dots=TASKS.map(k=>`<div class="hdot ${h[k]||h[k]==='1'||h[k]===1?'on':''}"></div>`).join('');
+    const pstr=Number.isInteger(pts)?pts:pts.toFixed(1).replace('.',',');
+    return `<div class="hrow"><div class="hdate">${d}</div><div><span class="hpill ${cl}">${pstr}</span></div>${dots}</div>`;
   }).join('');
 
-  document.getElementById('htable').innerHTML=`
-    <div class="htable-head"><div>Data</div><div>Pts</div>${headIcons}</div>
-    ${rows}
-  `;
+  document.getElementById('htable').innerHTML=`<div class="htable-head"><div>Data</div><div>Pts</div>${headIcons}</div>${rows}`;
 }
 
 // ---- Prêmios ----
 function savePremiosLocal(){localStorage.setItem('ciclo-premios',JSON.stringify(premios));}
-
 function getProgresso(p){
-  let current=0, target=parseInt(p.requisito)||1;
-  const total = hist.reduce((a,h)=>a+(parseFloat(h.total)||0),0);
-  if(p.tipo==='pontos_totais'){
-    current=total;
-  } else if(p.tipo==='streak'){
+  let current=0,target=parseInt(p.requisito)||1;
+  const total=hist.reduce((a,h)=>a+(parseFloat(h.total)||0),0);
+  if(p.tipo==='pontos_totais') current=total;
+  else if(p.tipo==='streak'){
     const sorted=[...hist].sort((a,b)=>b.date.localeCompare(a.date));
     let streak=0;
     for(let i=0;i<sorted.length;i++){
       const exp=new Date(now);exp.setDate(now.getDate()-i);
-      const expKey=exp.toISOString().split('T')[0];
-      if(sorted[i]&&sorted[i].date===expKey&&(parseFloat(sorted[i].total)||0)>0) streak++;
+      if(sorted[i]&&sorted[i].date===exp.toISOString().split('T')[0]&&(parseFloat(sorted[i].total)||0)>0) streak++;
       else break;
     }
     current=streak;
-  } else if(p.tipo==='dias_min'){
-    current=hist.filter(h=>(parseFloat(h.total)||0)>=8).length;
-  } else if(p.tipo==='dias_count'){
-    current=hist.length;
-  }
-  return {current, target, pct:Math.min(100,(current/target)*100)};
+  } else if(p.tipo==='dias_min') current=hist.filter(h=>(parseFloat(h.total)||0)>=8).length;
+  else if(p.tipo==='dias_count') current=hist.length;
+  return {current,target,pct:Math.min(100,(current/target)*100)};
 }
-
 function renderPremios(){
   if(!premios.length){
     document.getElementById('premios-list').innerHTML='<div class="empty">Nenhum prêmio cadastrado ainda.<br>Adicione prêmios para se motivar! 🏆</div>';
     return;
   }
-  document.getElementById('premios-list').innerHTML = premios.map((p,i)=>{
-    const {current,target,pct} = getProgresso(p);
-    const done = pct>=100;
-    const emoji = (p.nome.match(/\p{Emoji_Presentation}/u)||['🏆'])[0];
+  document.getElementById('premios-list').innerHTML=premios.map((p,i)=>{
+    const {current,target,pct}=getProgresso(p);
+    const done=pct>=100;
+    const emoji=(p.nome.match(/\p{Emoji_Presentation}/u)||['🏆'])[0];
     return `<div class="premio ${done?'unlk':''}">
       <div class="p-ico">${emoji}</div>
       <div class="p-body">
         <div class="p-nome">${p.nome}</div>
         ${p.desc?`<div class="p-desc">${p.desc}</div>`:''}
-        <div class="p-req">${done?'🎉 Desbloqueado!':
-          `${Number.isInteger(current)?current:current.toFixed(1)} / ${target} ${TIPO_LABEL[p.tipo]||''}`}</div>
+        <div class="p-req">${done?'🎉 Desbloqueado!':`${Number.isInteger(current)?current:current.toFixed(1)} / ${target} ${TIPO_LABEL[p.tipo]||''}`}</div>
         <div class="p-prog-wrap"><div class="p-prog" style="width:${pct}%"></div></div>
       </div>
       <div class="p-right">
         <div class="p-lock">${done?'🔓':'🔒'}</div>
-        <button class="p-del" onclick="delPremio(${i})" title="Remover">✕</button>
+        <button class="p-del" onclick="delPremio(${i})">✕</button>
       </div>
     </div>`;
   }).join('');
 }
-
-function delPremio(i){
-  if(!confirm('Remover este prêmio?')) return;
-  premios.splice(i,1);savePremiosLocal();renderPremios();
-}
+function delPremio(i){if(!confirm('Remover este prêmio?'))return;premios.splice(i,1);savePremiosLocal();renderPremios();}
 
 // ---- Modal ----
 function openModal(){document.getElementById('overlay').classList.remove('hid');}
 function closeModal(){document.getElementById('overlay').classList.add('hid');}
 function overlayClick(e){if(e.target===document.getElementById('overlay'))closeModal();}
 function updLabel(){
-  const map={pontos_totais:'Quantidade de pontos totais necessária',streak:'Número de dias consecutivos',dias_min:'Número de dias com 8+ pontos',dias_count:'Total de dias registrados'};
-  document.getElementById('f-req-lbl').textContent=map[document.getElementById('f-tipo').value]||'Meta';
+  const m={pontos_totais:'Quantidade de pontos totais',streak:'Número de dias consecutivos',dias_min:'Dias com 8+ pts',dias_count:'Total de dias registrados'};
+  document.getElementById('f-req-lbl').textContent=m[document.getElementById('f-tipo').value];
 }
 function savePremio(){
   const nome=document.getElementById('f-nome').value.trim();
   const desc=document.getElementById('f-desc').value.trim();
   const tipo=document.getElementById('f-tipo').value;
   const req =parseInt(document.getElementById('f-req').value);
-  if(!nome||!req||req<1){alert('Preencha nome e meta (número maior que 0).');return;}
+  if(!nome||!req||req<1){alert('Preencha nome e meta.');return;}
   premios.push({nome,desc,tipo,requisito:req});
   savePremiosLocal();closeModal();renderPremios();
-  document.getElementById('f-nome').value='';
-  document.getElementById('f-desc').value='';
-  document.getElementById('f-req').value='';
+  ['f-nome','f-desc','f-req'].forEach(id=>document.getElementById(id).value='');
 }
 
 // ---- Init ----
 async function init(){
-  // Carrega prêmios
-  const sp = localStorage.getItem('ciclo-premios');
-  if(sp) premios = JSON.parse(sp);
+  const sp=localStorage.getItem('ciclo-premios');
+  if(sp) premios=JSON.parse(sp);
 
-  // Carrega histórico
   await loadHist();
 
-  // Carrega hoje (local)
-  const sh = localStorage.getItem('ciclo-hoje-'+todayKey);
+  const sh=localStorage.getItem('ciclo-hoje-'+todayKey);
   if(sh){
-    hoje = JSON.parse(sh);
-    // Renderiza post
+    hoje=JSON.parse(sh);
     if(hoje.post>0){
-      document.querySelectorAll('.pbtn').forEach(b=>{
-        if(parseFloat(b.dataset.pts)===hoje.post) b.classList.add('sel');
-      });
+      document.querySelectorAll('.pbtn').forEach(b=>{if(parseFloat(b.dataset.pts)===hoje.post)b.classList.add('sel');});
       const lbl=hoje.post===0.5?'0,5 pt':hoje.post+(hoje.post===1?' pt':' pts');
-      const badge=document.getElementById('pbadge');
-      badge.textContent=lbl; badge.className='pbadge on';
+      document.getElementById('pbadge').textContent=lbl;
+      document.getElementById('pbadge').className='pbadge on';
       document.getElementById('pcard').classList.add('done');
     }
-    // Renderiza tasks
     TASKS.forEach(id=>{if(hoje[id])document.getElementById('t-'+id).classList.add('done');});
   }
-
   updateScore();
 }
 
